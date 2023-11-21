@@ -1,35 +1,19 @@
 from flask import Flask, render_template, jsonify
+from database import load_bakers_from_db
 
 app = Flask(__name__)
 
-JOBS = [
-{
-  'id':1,
-  'title':'Хлеб',
-  'sale':'100-300 тг',
-},
-  
-{
-  'id':2,
-  'title':'Сэндвич',
-  'sale':'700-1000 тг',
-}, 
-{
-  'id':3,
-  'title':'Выпечка',
-  'sale':'1000-1500 тг'
-}
-]
-
 @app.route("/")
 def  hello_world():
+  bakers = load_bakers_from_db()
   return render_template('bakery.html',
-                        jobs=JOBS,
+                        jobs=bakers,
                         company_name='Lana_bakery')
 
 
 @app.route("/api/jobs")
 def list_jobs():
+  bakers = load_bakers_from_db()
   return jsonify(JOBS)
 
 if __name__ == "__main__":
