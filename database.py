@@ -19,3 +19,10 @@ def load_bakers_from_db():
     for row in result.all():
       bakers.append(row)
     return bakers
+
+def load_job_from_db(job_id):
+  with engine.connect() as conn:
+    result = conn.execute(text("SELECT * FROM bakery WHERE id = :val").params(val=job_id))
+    job = result.fetchone()
+  return job
+    
