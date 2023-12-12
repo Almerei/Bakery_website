@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <title>{{job.title}} - Lana_bakery</title>
+    {% include 'bootstrap.html' %}
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: auto;
+            width: 80%;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #495057;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #dc3545;
+            margin-top: 20px;
+        }
+
+        h3 {
+            color: #343a40;
+            margin-top: 10px;
+        }
+
+        h4 {
+            color: #343a40;
+            margin-top: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .leadn {
+            font-size: 18px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .currency {
+            font-size: 20px;
+            color: #28a745;
+            font-weight: bold;
+        }
+      .food-items{
+        margin: 70px 0;
+        padding: 20px 0;
+        background-color: white;
+        border-radius: 30px;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      .item{
+        width: 250px;
+        padding: 30px;
+        text-align: center;
+      }
+      .item div{
+        height: 160px;
+      }
+      .item img{
+        width: 160px;
+        margin-bottom: 15px;
+      }
+      .item p{
+        font-size: 12px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+      }
+      .white_btn{
+        cursor: pointer;
+        margin-top: 20px;
+        width: 160px;
+        font-weight: bold;
+        color: rgb(253, 77, 8);
+        line-height: 50px;
+        border: 1 px solid rgb(253, 77, 8);
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 2px 15px rgb(250, 120, 69);
+        transition: autoll 0.2s;
+      }
+      .white_btn:hover{
+        color: white;
+        background-color: rgb(253, 77, 8);
+        box-shadow: 0 10px 15px
+      }
+      .item .white_btn{
+        width: 120px;
+        line-height: 35px;
+        font-size: 12px;
+      }
+    </style>
+    </head>
+    <body>
+      {% include 'nav.html' %}
+      </h2>
+        {% for job in jobs %}
+          {% include 'product.html' %}
+        {% endfor %}
+      </p>
+      <div class="container">
+      <h1 class="text-center mt-2 mb-4">
+        Lana_Bakery
+      </h1>
+
+        </h2>
+         <div class = "food-items">
+             <div class = "item">
+               <div>
+                 <img src="/static/круассан.jpeg" alt="food item"> 
+               </div>
+               <h3> Классикалық круассан  </h3>
+               <p>Құрамы:Мамық кондитерлік  сары май, ұнтақ қант, ванильді қант, ыстық су</p>
+               <p> Бағасы : 500тг </p>
+             </div>
+             <div class = "item">
+               <div>
+                 <img src="/static/Нан.jpeg" alt="food item"> 
+               </div>
+               <h3> Нан </h3>
+               <p>Құрамы:Қара бидай ұнының жоғары сорты
+                , ашытқы, тұз, су</p>
+               <p> Бағасы : 150тг </p>
+             </div>
+             <div class = "item">
+               <div>
+                 <img src="/static/пирог.jpeg" alt="food item"> 
+               </div>
+               <h3> Пирог </h3>
+               <p>Құрамы:Жұмсақ қатпарлы қамыр
+                ,жаңа піскен алма
+                ,кант
+                ,даршын
+                ,май</p>
+
+               <p> Бағасы : 800тг </p>
+            </div>
+         </div>
+  <h3 class="mb-2">{{job.title}}</h3>
+  <h4>Құрамы</h4>
+  <p class="leadn mt-0">{{job.sostav}}</p>
+  <h4>Бағасы</h4>
+  <p>{{job.sale}}{{job.currency}}</p>
+</body>
+</html>

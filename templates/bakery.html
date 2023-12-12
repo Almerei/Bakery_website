@@ -14,16 +14,67 @@
       object-fit: cover;
       margin-bottom: 4px;
     }
+    .food-items{
+      margin: 70px 0;
+      padding: 20px 0;
+      background-color: white;
+      border-radius: 30px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .item{
+      width: 250px;
+      padding: 30px;
+      text-align: center;
+    }
+    .item div{
+      height: 160px;
+    }
+    .item img{
+      width: 160px;
+      margin-bottom: 15px;
+    }
+    .item p{
+      font-size: 12px;
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+    .white_btn{
+      cursor: pointer;
+      margin-top: 20px;
+      width: 160px;
+      font-weight: bold;
+      color: rgb(253, 77, 8);
+      line-height: 50px;
+      border: 1 px solid rgb(253, 77, 8);
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 2px 15px rgb(250, 120, 69);
+      transition: autoll 0.2s;
+    }
+    .white_btn:hover{
+      color: white;
+      background-color: rgb(253, 77, 8);
+      box-shadow: 0 10px 15px
+    }
+    .item .white_btn{
+      width: 120px;
+      line-height: 35px;
+      font-size: 12px;
+    }
+
+
   </style> 
-    
+
  </head>
  <body> 
    {% include 'nav.html' %}
    <img class="img-fluid" id="banner" src=https://bakerywebsite.almerei.repl.co/static/fon.jpg>
-   <h1 class="text-center">Welcome to {{company_name}}
+   <h1 class="text-center"> {{company_name}} наубайханасына қош келдіңіздер!
    </h1>
-   <h2 class="text-center mt-2 mb-4">About</h2>
- 
+   <h2 class="text-center mt-2 mb-4">Біз туралы</h2>
+
   <div class="row" style="margin-bottom:16px">
    <div class= "col-md-6">
      <p class="lead">
@@ -43,15 +94,50 @@
     </div>
    </div>
   <h2 class="text-center mt-2 mb-4">
-    Наша продукция
+    Біздің өнімдеріміз
   </h2>
+   <div class = "food-items">
+       <div class = "item">
+         <div>
+           <img src="/static/круассан.jpeg" alt="food item"> 
+         </div>
+         <h3> Классикалық круассан  </h3>
+         <p>Құрамы:Мамық кондитерлік  сары май, ұнтақ қант, ванильді қант, ыстық су</p>
+         <p> Бағасы : 500тг </p>
+       </div>
+       <div class = "item">
+         <div>
+           <img src="/static/Нан.jpeg" alt="food item"> 
+         </div>
+         <h3> Нан </h3>
+         <p>Құрамы:Қара бидай ұнының жоғары сорты
+          , ашытқы, тұз, су</p>
+         <p> Бағасы : 150тг </p>
+       </div>
+       <div class = "item">
+         <div>
+           <img src="/static/пирог.jpeg" alt="food item"> 
+         </div>
+         <h3> Пирог </h3>
+         <p>Құрамы:Жұмсақ қатпарлы қамыр
+          ,жаңа піскен алма
+          ,кант
+          ,даршын
+          ,май</p>
+
+         <p> Бағасы : 800тг </p>
+      </div>
+   </div>
     {% for job in jobs %}
       {% include 'product.html' %}
     {% endfor %}
   </p>
   <div class="text-center">
-  <a class="btn btn-link btn-lg" href="https://www.instagram.com/asanaly__aa?igshid=NzZlODBkYWE4Ng%3D%3D&utm_source=qr" >Contact us</a>
+  <a class="btn btn-link btn-lg" href="https://www.instagram.com/asanaly__aa?igshid=NzZlODBkYWE4Ng%3D%3D&utm_source=qr" >Байланыс құралы</a>
     </div>
+
+   <h4>Мекен жайымыз</h4>
+  <p></p><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1204.7406838139677!2d71.49075128827603!3d51.12626679641369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sru!2skz!4v1701931217730!5m2!1sru!2skz" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
   </div>
    {% include 'footer.html' %}
 </body>

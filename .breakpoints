@@ -1,0 +1,20 @@
+{
+  "files": {
+    "templates/cart.html": [
+      {
+        "id": "91640ef1-8934-4d56-9324-d39ef5f86650",
+        "line": 214,
+        "version": 5898,
+        "index": 5083
+      }
+    ],
+    "templates/product.json": [
+      {
+        "id": "9c9abc1c-cb5f-4fdd-b881-9b1f7d16b4af",
+        "line": 9,
+        "version": 127,
+        "index": 109
+      }
+    ]
+  }
+}
